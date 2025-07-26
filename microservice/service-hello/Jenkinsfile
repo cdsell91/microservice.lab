@@ -14,10 +14,10 @@ pipeline {
         sh 'mvn test'
       }
     }
-    stage('Docker') {
-      steps {
-        sh 'docker build -t service-hello:latest .'
-      }
-    }
+//     stage('Docker') {
+//       steps {
+//         sh 'docker build -t service-hello:latest .'
+//       }
+//     }
   }
 }
