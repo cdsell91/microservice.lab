@@ -1,0 +1,1 @@
+# Decisiones de diseño, notas de arquitectura
