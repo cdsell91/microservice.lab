@@ -1,0 +1,27 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Build') {
+      steps {
+        dir('microservicios/service-hello') {
+          sh 'mvn clean package'
+        }
+      }
+    }
+    stage('Test') {
+      steps {
+        dir('microservicios/service-hello') {
+          sh 'mvn test'
+        }
+      }
+    }
+    stage('Docker') {
+      steps {
+        dir('microservicios/service-hello') {
+          sh 'docker build -t service-hello:latest .'
+        }
+      }
+    }
+  }
+}
