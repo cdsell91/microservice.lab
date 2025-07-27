@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>microservice/service-hello</module>
+        <module>microservice/spreadsheet</module>
     </modules>
 
 </project>
