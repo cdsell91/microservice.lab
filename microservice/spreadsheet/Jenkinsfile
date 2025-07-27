@@ -16,8 +16,14 @@ pipeline {
     }
     stage('Docker') {
       steps {
-        sh 'docker build -t service-spreadsheet:latest microservice/spreadsheet/Dockerfile'
-      }
+          sh '''
+            echo "Current directory:"
+            pwd
+            echo "Content of current directory:"
+            ls -la
+            docker build -t service-spreadsheet:latest -f microservice/spreadsheet/Dockerfile microservice/spreadsheet
+          '''
+        }
     }
   }
 }
