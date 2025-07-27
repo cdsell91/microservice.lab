@@ -16,14 +16,10 @@ pipeline {
     }
     stage('Docker') {
       steps {
-          sh '''
-            echo "Current directory:"
-            pwd
-            echo "Content of current directory:"
-            ls -la
-            docker build -t service-spreadsheet:latest -f microservice/spreadsheet/Dockerfile microservice/spreadsheet
-          '''
+        dir('microservice/spreadsheet') {
+            sh 'docker build -t service-spreadsheet:latest .'
         }
+      }
     }
   }
 }
